@@ -15,10 +15,19 @@
             display: none;
         }
     }
+    .carousel {
+        padding: 40px 0;
+        &__inner {
+            width: 100%;
+            img {
+                width: 100%;
+            }
+        }
+    }
 }
 
 @media (max-width: 575px) {
-    .title_left {
+    .title {
         font-size: 20px;
     }
     .consultation{
@@ -46,6 +55,21 @@
         &__icons {
             flex-direction: column;
             align-items: center;
+        }
+    }
+    .catalog__tab {
+        font-size: 12px;
+        line-height: 20px;
+    }
+    .feedbacks-item {
+        flex-direction: column;
+        margin-top: 0;
+        img {
+            margin: 20px auto;
+            align-items: center;
+        }
+        &__descr {
+            margin-left: 0;
         }
     }
 }
