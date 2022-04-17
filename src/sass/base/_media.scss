@@ -72,4 +72,30 @@
             margin-left: 0;
         }
     }
+    .footer {
+        &__info {
+            width:  320px;
+            height: 160px;
+            padding: 20px;
+        }
+        &__address {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        &__phone {
+            margin-bottom: 15px;
+        }
+    }
+    .modal {
+        width: 320px;
+        padding: 10px;
+        &__close {
+            right: 15px;
+            font-size: 36px;
+        }
+        &__subtitle {
+            margin-top: 30px;
+        }
+    }
+    
 }
