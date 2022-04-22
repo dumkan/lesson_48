@@ -88,4 +88,45 @@ $(document).ready(function(){
 
     // маска ввода
     $('input[name=phone]').mask("+7 (999) 999-99-99");
+
+    // отправка email с сайта
+    $('form').submit(function(e) {
+      e.preventDefault();
+
+      if(!$(this).valid()) {return;}  // проверка валидации 
+
+      $.ajax({
+        type: "POST",
+        url: "mailer/smart.php",
+        data: $(this).serialize()
+      }).done(function(){
+          $(this).find("input").val(""); // очистим инпуты
+          $('#consultation, #order').fadeOut();
+          $('.overlay, #thanks').fadeIn();
+          $('form').trigger('reset'); // очистим формы
+      });
+      return false;
+    });
+
+    // плавный скролл и возхврат на вверх страницы
+
+    $(window).scroll(function() {
+      if ($(this).scrollTop() > 1600) {
+        $('.pageup').fadeIn();
+      } else {
+        $('.pageup').fadeOut();
+      }
+    });
+
+    $("a").on('click', function(event) {
+      if (this.hash !== "") {
+        event.preventDefault();
+        var hash = this.hash;
+        $('html, body').animate({ 
+          scrollTop: $(hash).offset().top}+"px", 8000, function(){
+            window.location.hash = hash;
+        });
+      } 
+    });
+
 });
