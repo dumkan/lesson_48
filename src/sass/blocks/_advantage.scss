@@ -19,6 +19,17 @@
         a {
             color: $main_color;
         }
+// анимация не как у Ивана, а наоброт - при наведении сердце пульчирует
+        &_animated {
+            animation-play-state: paused;
+            animation-name: heartbeat;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            &:hover {
+                animation-play-state: running;    
+            } 
+        }
+        
     }
     &__subtitle {
         margin-top: 35px;
