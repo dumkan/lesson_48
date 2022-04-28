@@ -7,9 +7,15 @@
     margin: 0 auto;
 }
 
+@import 'lib/animate';
+@import 'lib/bootstrap-reboot.min';
+@import 'lib/fonts';
+@import 'lib/slick';
+
 @import 'base/variables';
 @import 'base/animations';
 @import 'base/media';
+
 @import 'blocks/promo';
 @import 'blocks/header';
 @import 'blocks/button';
